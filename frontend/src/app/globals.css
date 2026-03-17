@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  Custom theme — eco-green + earth-tone palette for an NGO site     */
+/* ------------------------------------------------------------------ */
+@theme inline {
+  --color-primary: #16A34A;
+  --color-primary-light: #22C55E;
+  --color-primary-dark: #15803D;
+  --color-secondary: #78716C;
+  --color-accent: #F59E0B;
+  --color-earth: #A16207;
+  --color-sand: #FEF3C7;
+  --color-sage: #ECFDF5;
+  --color-charcoal: #1C1917;
+  --color-muted: #F5F5F4;
+  --color-border: #E7E5E4;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Base                                                               */
+/* ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-charcoal);
+  background: #ffffff;
+}
+
+::selection {
+  background: var(--color-primary-light);
+  color: white;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Utilities                                                          */
+/* ------------------------------------------------------------------ */
+.prose h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}

@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+.env
+db.sqlite3
+media/
+staticfiles/
+*.log
+.venv/
+venv/
+.idea/
+.vscode/
+*.swp
+
+# Frontend
+node_modules/
+.next/
+.env.local
