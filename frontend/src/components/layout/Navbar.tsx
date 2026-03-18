@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import GoogleTranslate from "./GoogleTranslate";
 
 const links = [
   { href: "/", label: "Home" },
@@ -22,11 +23,14 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
-        {/* Logo */}
-        <Link href="/" className="text-xl font-extrabold tracking-tight text-primary">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-8">
+        {/* Logo + Translate */}
+        <div className="flex items-center gap-4">
+          <Link href="/" className="text-xl font-extrabold tracking-tight text-primary">
           Break<span className="text-charcoal">The</span>Silence
-        </Link>
+          </Link>
+          <GoogleTranslate />
+        </div>
 
         {/* Desktop links */}
         <ul className="hidden items-center gap-1 md:flex">
@@ -67,6 +71,10 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div className="border-t border-border bg-white px-4 pb-4 md:hidden">
+          <div className="flex items-center gap-2 border-b border-border py-3">
+            <span className="text-xs text-secondary">Language:</span>
+            <GoogleTranslate />
+          </div>
           <ul className="flex flex-col gap-1 pt-2">
             {links.map((l) => (
               <li key={l.href}>
