@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
+import { getMediaUrl } from "@/lib/media";
 import type { Project } from "@/types";
 
 const statusColor: Record<string, string> = {
@@ -24,12 +24,11 @@ export default function ProjectCard({ project }: { project: Project }) {
       {/* Image */}
       <div className="relative h-52 w-full overflow-hidden bg-muted">
         {project.featured_image ? (
-          <Image
-            src={project.featured_image}
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={getMediaUrl(project.featured_image)}
             alt={project.title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, 33vw"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <div className="flex h-full items-center justify-center text-secondary">

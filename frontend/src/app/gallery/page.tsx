@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { getMediaUrl } from "@/lib/media";
 import SectionTitle from "@/components/ui/SectionTitle";
 import { CardGridSkeleton } from "@/components/ui/Skeleton";
 import EmptyState from "@/components/ui/EmptyState";
@@ -44,13 +44,11 @@ export default function GalleryPage() {
                     className="mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-border bg-white shadow-sm"
                   >
                     <div className="relative aspect-auto">
-                      <Image
-                        src={img.image}
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={getMediaUrl(img.image)}
                         alt={img.caption || "Gallery image"}
-                        width={600}
-                        height={400}
                         className="h-auto w-full object-cover"
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     </div>
                     {(img.caption || img.project_title) && (

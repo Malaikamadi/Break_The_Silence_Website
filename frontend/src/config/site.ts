@@ -12,10 +12,27 @@ export interface Partner {
 }
 
 export const partners: Partner[] = [
-  { name: "Partner 1", logo: null, href: "#" },
-  { name: "Partner 2", logo: null, href: "#" },
-  { name: "Partner 3", logo: null, href: "#" },
-  { name: "Partner 4", logo: null, href: "#" },
+  { name: "UNFPA", logo: "/partners/unfpa.png", href: "https://www.unfpa.org" },
+  {
+    name: "Ministry of Youth Affairs, Sierra Leone",
+    logo: "/partners/ministry-of-youth.png",
+    href: "https://www.gov.sl",
+  },
+  {
+    name: "Plan International",
+    logo: "/partners/plan-international.png",
+    href: "https://plan-international.org",
+  },
+  {
+    name: "DANIDA",
+    logo: "/partners/danida.png",
+    href: "https://um.dk/en/danida",
+  },
+  {
+    name: "Youth Climate Action Accelerator",
+    logo: "/partners/youth-climate-accelerator.png",
+    href: "#",
+  },
 ];
 
 export const defaultTestimonials = [

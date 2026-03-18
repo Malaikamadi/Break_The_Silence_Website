@@ -1,21 +1,26 @@
-import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import Link from 'next/link';
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaXTwitter,
+} from 'react-icons/fa6';
 
 const quickLinks = [
-  { href: "/about", label: "About Us" },
-  { href: "/projects", label: "Projects" },
-  { href: "/events", label: "Events" },
-  { href: "/blog", label: "Blog" },
-  { href: "/volunteer", label: "Volunteer" },
-  { href: "/contact", label: "Contact" },
-  { href: "/donate", label: "Donate" },
+  { href: '/about', label: 'About Us' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/events', label: 'Events' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/volunteer', label: 'Volunteer' },
+  { href: '/contact', label: 'Contact' },
+  { href: '/donate', label: 'Donate' },
 ];
 
 const socials = [
-  { icon: FaFacebookF, href: "#", label: "Facebook" },
-  { icon: FaXTwitter, href: "#", label: "Twitter" },
-  { icon: FaInstagram, href: "#", label: "Instagram" },
-  { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
+  { icon: FaFacebookF, href: '#', label: 'Facebook' },
+  { icon: FaXTwitter, href: '#', label: 'Twitter' },
+  { icon: FaInstagram, href: '#', label: 'Instagram' },
+  { icon: FaLinkedinIn, href: '#', label: 'LinkedIn' },
 ];
 
 export default function Footer() {
@@ -58,9 +63,9 @@ export default function Footer() {
             Get In Touch
           </h3>
           <address className="space-y-2 text-sm not-italic text-stone-400">
-            <p>Nairobi, Kenya</p>
+            <p>Freetown, Sierra Leone</p>
             <p>info@breakthesilence.org</p>
-            <p>+254 700 000 000</p>
+            <p>+232 78 95 09 10</p>
           </address>
         </div>
 
@@ -87,7 +92,8 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-stone-700 py-5 text-center text-xs text-stone-500">
-        &copy; {new Date().getFullYear()} Break the Silence. All rights reserved.
+        &copy; {new Date().getFullYear()} Break the Silence. All rights
+        reserved.
       </div>
     </footer>
   );

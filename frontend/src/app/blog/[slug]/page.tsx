@@ -1,8 +1,8 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
+import { getMediaUrl } from "@/lib/media";
 import { HiArrowLeft } from "react-icons/hi";
 import { usePost } from "@/hooks/usePosts";
 import { DetailSkeleton } from "@/components/ui/Skeleton";
@@ -43,13 +43,11 @@ export default function BlogDetailPage() {
 
       {post.featured_image && (
         <div className="relative mb-8 h-64 w-full overflow-hidden rounded-2xl bg-muted sm:h-80">
-          <Image
-            src={post.featured_image}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={getMediaUrl(post.featured_image)}
             alt={post.title}
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 768px) 100vw, 768px"
+            className="h-full w-full object-cover"
           />
         </div>
       )}

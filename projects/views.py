@@ -12,7 +12,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAdminOrReadOnly]
     lookup_field = "slug"
     search_fields = ["title", "description", "location"]
-    filterset_fields = ["status", "location"]
+    filterset_fields = ["status", "location", "is_featured"]
     ordering_fields = ["start_date", "created_at", "title"]
 
     def perform_create(self, serializer):

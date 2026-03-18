@@ -1,8 +1,8 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
+import { getMediaUrl } from "@/lib/media";
 import { HiArrowLeft, HiCalendar, HiLocationMarker } from "react-icons/hi";
 import { useProject } from "@/hooks/useProjects";
 import { DetailSkeleton } from "@/components/ui/Skeleton";
@@ -44,13 +44,11 @@ export default function ProjectDetailPage() {
       {/* Image */}
       {project.featured_image && (
         <div className="relative mb-8 h-72 w-full overflow-hidden rounded-2xl bg-muted sm:h-96">
-          <Image
-            src={project.featured_image}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={getMediaUrl(project.featured_image)}
             alt={project.title}
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 1024px) 100vw, 896px"
+            className="h-full w-full object-cover"
           />
         </div>
       )}

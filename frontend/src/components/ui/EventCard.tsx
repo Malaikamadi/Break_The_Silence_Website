@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { getMediaUrl } from "@/lib/media";
 import { HiCalendar, HiLocationMarker, HiUsers } from "react-icons/hi";
 import type { Event } from "@/types";
 
@@ -24,12 +24,11 @@ export default function EventCard({ event }: { event: Event }) {
     >
       <div className="relative h-48 w-full overflow-hidden bg-muted">
         {event.featured_image ? (
-          <Image
-            src={event.featured_image}
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={getMediaUrl(event.featured_image)}
             alt={event.name}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, 33vw"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <div className="flex h-full items-center justify-center bg-sage text-primary font-bold text-lg">

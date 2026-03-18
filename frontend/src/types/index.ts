@@ -36,6 +36,7 @@ export interface Project {
   slug: string;
   description: string;
   location: string;
+  is_featured?: boolean;
   start_date: string;
   end_date: string | null;
   status: ProjectStatus;

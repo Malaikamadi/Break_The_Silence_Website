@@ -29,6 +29,10 @@ class Project(models.Model):
         upload_to="projects/%Y/%m/",
         blank=True,
     )
+    is_featured = models.BooleanField(
+        default=False,
+        help_text="Show this project in the hero slider on the homepage.",
+    )
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.SET_NULL,

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { getMediaUrl } from "@/lib/media";
 import Link from "next/link";
 import type { PostSummary } from "@/types";
 
@@ -16,12 +16,11 @@ export default function BlogCard({ post }: { post: PostSummary }) {
     >
       <div className="relative h-48 w-full overflow-hidden bg-muted">
         {post.featured_image ? (
-          <Image
-            src={post.featured_image}
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={getMediaUrl(post.featured_image)}
             alt={post.title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, 33vw"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <div className="flex h-full items-center justify-center text-secondary">
