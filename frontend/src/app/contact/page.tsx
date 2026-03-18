@@ -5,7 +5,8 @@ import { HiMail, HiPhone, HiLocationMarker } from "react-icons/hi";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Break the Silence. Reach out for partnerships, questions, or media inquiries.",
+    "Get in touch with Break the Silence. Reach out for partnerships, questions about GBV prevention programs, or media inquiries.",
+  keywords: ["contact NGO", "partnerships", "GBV prevention", "Break the Silence"],
 };
 
 const contacts = [

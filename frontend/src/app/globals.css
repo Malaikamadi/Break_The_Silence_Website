@@ -1,17 +1,32 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ */
-/*  Custom theme — eco-green + earth-tone palette for an NGO site     */
+/*  Break the Silence — Bold advocacy NGO theme                       */
+/*  Earth tones + deep purple advocacy accent                          */
 /* ------------------------------------------------------------------ */
 @theme inline {
-  --color-primary: #16A34A;
-  --color-primary-light: #22C55E;
-  --color-primary-dark: #15803D;
-  --color-secondary: #78716C;
-  --color-accent: #F59E0B;
-  --color-earth: #A16207;
+  /* Advocacy accent — deep purple for gender justice & empowerment */
+  --color-advocacy: #5B21B6;
+  --color-advocacy-light: #7C3AED;
+  --color-advocacy-dark: #4C1D95;
+
+  /* Earth tones — warm, human, grounded */
+  --color-terracotta: #C2410C;
+  --color-terracotta-light: #EA580C;
   --color-sand: #FEF3C7;
+  --color-warm-stone: #78716C;
   --color-sage: #ECFDF5;
+  --color-clay: #D6D3D1;
+
+  /* Primary = advocacy purple for CTAs and emphasis */
+  --color-primary: #5B21B6;
+  --color-primary-light: #7C3AED;
+  --color-primary-dark: #4C1D95;
+
+  /* Secondary / muted */
+  --color-secondary: #78716C;
+  --color-accent: #EA580C;
+  --color-earth: #A16207;
   --color-charcoal: #1C1917;
   --color-muted: #F5F5F4;
   --color-border: #E7E5E4;

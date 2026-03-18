@@ -10,11 +10,23 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: {
-    default: "Break the Silence — Youth Empowerment & Climate Action",
+    default:
+      "Break the Silence — GBV Prevention, Youth & Women Empowerment",
     template: "%s | Break the Silence",
   },
   description:
-    "Empowering youth, recycling plastic, and innovating for climate action across communities in Kenya and beyond.",
+    "Preventing gender-based violence, protecting young girls, and empowering youth and women through community education, advocacy, and leadership development.",
+  keywords: [
+    "gender-based violence prevention",
+    "GBV awareness",
+    "youth empowerment",
+    "women empowerment",
+    "sexual violence advocacy",
+    "girls protection",
+    "community education",
+    "gender justice",
+    "Kenya NGO",
+  ],
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
   ),
@@ -22,6 +34,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Break the Silence",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

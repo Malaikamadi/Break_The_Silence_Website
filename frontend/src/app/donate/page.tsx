@@ -6,7 +6,8 @@ import { HiHeart, HiShieldCheck, HiCurrencyDollar } from "react-icons/hi";
 export const metadata: Metadata = {
   title: "Donate",
   description:
-    "Support Break the Silence with a donation. Every contribution fuels youth empowerment, plastic recycling, and climate action.",
+    "Support Break the Silence with a donation. Every contribution fuels GBV prevention, youth and women empowerment, and community programs.",
+  keywords: ["donate NGO", "GBV prevention", "youth empowerment", "gender justice"],
 };
 
 const tiers = [
@@ -20,7 +21,7 @@ const reasons = [
   {
     icon: HiHeart,
     title: "Direct Impact",
-    text: "100% of donations go toward programs — training youth, recycling plastic, and building community resilience.",
+    text: "100% of donations go toward programs — GBV prevention, youth empowerment, safe spaces, and community resilience.",
   },
   {
     icon: HiShieldCheck,

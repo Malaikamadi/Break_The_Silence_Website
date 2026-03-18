@@ -3,10 +3,10 @@
 import ImpactCounter from "@/components/ui/ImpactCounter";
 
 const stats = [
-  { value: 5000, label: "Youth Trained", suffix: "+" },
-  { value: 120, label: "Tons of Plastic Recycled", suffix: "t" },
-  { value: 35, label: "Community Projects", suffix: "+" },
-  { value: 800, label: "Active Volunteers", suffix: "+" },
+  { value: 5000, label: "Young Girls Reached", suffix: "+" },
+  { value: 120, label: "Community Champions Trained", suffix: "+" },
+  { value: 35, label: "GBV Prevention Programs", suffix: "+" },
+  { value: 800, label: "Survivors Supported", suffix: "+" },
 ];
 
 export default function ImpactStats() {

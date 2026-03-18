@@ -28,8 +28,8 @@ export default function Footer() {
             Break<span className="text-primary-light">The</span>Silence
           </h2>
           <p className="text-sm leading-relaxed text-stone-400">
-            Empowering youth, recycling plastic, and innovating for climate
-            action across communities.
+            Preventing gender-based violence, protecting young girls, and
+            empowering youth and women through community education and advocacy.
           </p>
         </div>
 

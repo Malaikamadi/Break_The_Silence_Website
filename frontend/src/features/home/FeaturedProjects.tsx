@@ -16,7 +16,7 @@ export default function FeaturedProjects() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <SectionTitle
           title="Featured Projects"
-          subtitle="From plastic recycling to youth training — explore the initiatives making a difference."
+          subtitle="From GBV prevention to youth empowerment — explore the initiatives making a difference."
         />
 
         {isLoading ? (
