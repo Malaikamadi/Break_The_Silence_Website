@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { fadeInUp, viewportOnce } from "@/lib/animations";
-import { founderImageUrl } from "@/config/site";
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { fadeInUp, viewportOnce } from '@/lib/animations';
+import { founderImageUrl } from '@/config/site';
 
 export default function FounderStory() {
   return (
@@ -22,7 +22,7 @@ export default function FounderStory() {
             {founderImageUrl ? (
               <Image
                 src={founderImageUrl}
-                alt="Break the Silence founder"
+                alt="Young women and girls at Break the Silence Day of Advocacy march"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -62,21 +62,22 @@ export default function FounderStory() {
               className="prose prose-lg max-w-none text-secondary"
             >
               <p className="mb-4">
-                Break the Silence was born from a simple belief: every young girl
-                deserves safety, dignity, and the chance to thrive. What started
-                as a grassroots response to gender-based violence has grown into
-                a movement for prevention, protection, and empowerment.
+                Break the Silence was born from a simple belief: every young
+                girl deserves safety, dignity, and the chance to thrive. What
+                started as a grassroots response to gender-based violence has
+                grown into a movement for prevention, protection, and
+                empowerment.
               </p>
               <p className="mb-4">
-                We work at the intersection of advocacy and action — educating
+                We work at the intersection of advocacy and action educating
                 communities, training youth leaders, and creating safe spaces
-                where survivors can heal and rebuild. Our founder&apos;s journey
-                from survivor to advocate drives our commitment to turning pain
-                into purpose.
+                where survivors can heal and rebuild. Our founder's journey from
+                survivor to advocate drives our commitment to turning pain into
+                purpose.
               </p>
               <p>
                 Today we stand with thousands of young women and girls, their
-                families, and communities — because together, we can end the
+                families, and communities because together, we can end the
                 silence.
               </p>
             </motion.div>

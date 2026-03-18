@@ -40,7 +40,7 @@ export default function ImpactCounter({ value, label, suffix = "" }: Props) {
   return (
     <div ref={ref} className="text-center">
       <motion.span
-        className="block text-4xl font-extrabold text-primary sm:text-5xl"
+        className="block text-2xl font-bold text-primary sm:text-3xl"
         initial={{ opacity: 0, scale: 0.5 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -49,7 +49,7 @@ export default function ImpactCounter({ value, label, suffix = "" }: Props) {
         {display.toLocaleString()}
         {suffix}
       </motion.span>
-      <p className="mt-2 text-sm font-medium text-secondary">{label}</p>
+      <p className="mt-1 text-xs font-medium text-secondary sm:text-sm">{label}</p>
     </div>
   );
 }

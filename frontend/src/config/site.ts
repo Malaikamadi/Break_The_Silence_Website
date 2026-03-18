@@ -3,7 +3,7 @@
  */
 
 export const founderImageUrl =
-  process.env.NEXT_PUBLIC_FOUNDER_IMAGE ?? null;
+  process.env.NEXT_PUBLIC_FOUNDER_IMAGE ?? "/images/our-story.png";
 
 export interface Partner {
   name: string;
