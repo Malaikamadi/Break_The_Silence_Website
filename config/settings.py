@@ -2,19 +2,31 @@
 Django settings for Break the Silence NGO backend.
 """
 
+import os
 from datetime import timedelta
 from pathlib import Path
 
+import dj_database_url
 from decouple import Csv, config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Detect Render deployment
+ON_RENDER = os.environ.get("RENDER") == "true"
+
 # ---------------------------------------------------------------------------
 # Security
 # ---------------------------------------------------------------------------
-SECRET_KEY = config("SECRET_KEY")
-DEBUG = config("DEBUG", default=False, cast=bool)
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost,127.0.0.1", cast=Csv())
+SECRET_KEY = config("SECRET_KEY", default="dev-secret-key-change-in-production")
+DEBUG = config("DEBUG", default=not ON_RENDER, cast=bool)
+if ON_RENDER:
+    ALLOWED_HOSTS = [
+        ".render.com",
+        os.environ.get("RENDER_EXTERNAL_HOSTNAME", ""),
+    ]
+    ALLOWED_HOSTS = [h for h in ALLOWED_HOSTS if h]
+else:
+    ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="localhost,127.0.0.1", cast=Csv())
 
 # ---------------------------------------------------------------------------
 # Application definition
@@ -53,6 +65,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 # ---------------------------------------------------------------------------
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -84,7 +97,14 @@ WSGI_APPLICATION = "config.wsgi.application"
 # ---------------------------------------------------------------------------
 # Database — PostgreSQL or SQLite (set USE_SQLITE=True for local dev without PostgreSQL)
 # ---------------------------------------------------------------------------
-if config("USE_SQLITE", default=False, cast=bool):
+if ON_RENDER and os.environ.get("DATABASE_URL"):
+    DATABASES = {
+        "default": dj_database_url.config(
+            conn_max_age=600,
+            conn_health_checks=True,
+        )
+    }
+elif config("USE_SQLITE", default=False, cast=bool):
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
@@ -175,11 +195,18 @@ SIMPLE_JWT = {
 # ---------------------------------------------------------------------------
 # CORS — allow the Next.js frontend to call the API
 # ---------------------------------------------------------------------------
-CORS_ALLOWED_ORIGINS = config(
-    "CORS_ALLOWED_ORIGINS",
-    default="http://localhost:3000",
-    cast=Csv(),
-)
+if ON_RENDER:
+    CORS_ALLOWED_ORIGINS = config(
+        "CORS_ALLOWED_ORIGINS",
+        default="https://break-the-silence-website.vercel.app,https://*.vercel.app",
+        cast=Csv(),
+    )
+else:
+    CORS_ALLOWED_ORIGINS = config(
+        "CORS_ALLOWED_ORIGINS",
+        default="http://localhost:3000",
+        cast=Csv(),
+    )
 CORS_ALLOW_CREDENTIALS = True
 
 # ---------------------------------------------------------------------------

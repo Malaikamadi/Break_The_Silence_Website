@@ -1,0 +1,32 @@
+# Render Blueprint - Deploy Django backend + PostgreSQL
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: break-the-silence-api
+    runtime: python
+    region: oregon
+
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn config.wsgi:application"
+
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.0"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: CORS_ALLOWED_ORIGINS
+        value: "https://break-the-silence-website.vercel.app,https://break-the-silence-website-c19w.vercel.app"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: break-the-silence-db
+          property: connectionString
+
+databases:
+  - name: break-the-silence-db
+    databaseName: break_the_silence
+    user: break_the_silence
+    region: oregon
+    plan: free
