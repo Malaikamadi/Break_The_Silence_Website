@@ -4,7 +4,7 @@ import Hero from "@/features/home/Hero";
 import ImpactStats from "@/features/home/ImpactStats";
 import FounderStory from "@/features/home/FounderStory";
 import ProgramAreas from "@/features/home/ProgramAreas";
-import FeaturedProjects from "@/features/home/FeaturedProjects";
+import LatestUpdates from "@/features/home/LatestUpdates";
 import Testimonies from "@/features/home/Testimonies";
 import CTABanner from "@/components/ui/CTABanner";
 import PartnersLogos from "@/features/home/PartnersLogos";
@@ -16,7 +16,7 @@ export default function HomePage() {
       <ImpactStats />
       <FounderStory />
       <ProgramAreas />
-      <FeaturedProjects />
+      <LatestUpdates />
       <Testimonies />
       <CTABanner
         title="Ready to Make a Difference?"

@@ -2,6 +2,21 @@ from django.conf import settings
 from django.db import models
 
 
+class ProjectCategory(models.Model):
+    """Categories for filtering projects (e.g. Updates, Events, Stories)."""
+
+    slug = models.SlugField(max_length=50, unique=True)
+    label = models.CharField(max_length=100)
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order", "label"]
+        verbose_name_plural = "Project categories"
+
+    def __str__(self):
+        return self.label
+
+
 class Project(models.Model):
     class Status(models.TextChoices):
         PLANNED = "planned", "Planned"
@@ -32,6 +47,14 @@ class Project(models.Model):
     is_featured = models.BooleanField(
         default=False,
         help_text="Show this project in the hero slider on the homepage.",
+    )
+    category = models.ForeignKey(
+        "ProjectCategory",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="projects",
+        help_text="Category for filtering (Updates, Events, Stories).",
     )
     created_by = models.ForeignKey(
         settings.AUTH_USER_MODEL,

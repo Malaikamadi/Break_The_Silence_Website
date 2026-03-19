@@ -1,10 +1,17 @@
 from rest_framework import serializers
 
-from .models import Project
+from .models import Project, ProjectCategory
+
+
+class ProjectCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProjectCategory
+        fields = ["id", "slug", "label", "order"]
 
 
 class ProjectSerializer(serializers.ModelSerializer):
     created_by = serializers.StringRelatedField(read_only=True)
+    category = ProjectCategorySerializer(read_only=True)
 
     class Meta:
         model = Project
@@ -15,6 +22,7 @@ class ProjectSerializer(serializers.ModelSerializer):
             "description",
             "location",
             "is_featured",
+            "category",
             "start_date",
             "end_date",
             "status",

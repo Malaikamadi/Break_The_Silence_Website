@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SectionTitle from "@/components/ui/SectionTitle";
 import CTABanner from "@/components/ui/CTABanner";
+import Leadership from "@/features/about/Leadership";
 import { HiEye, HiHeart, HiSparkles } from "react-icons/hi";
 
 export const metadata: Metadata = {
@@ -26,13 +27,6 @@ const values = [
     title: "Our Values",
     text: "Integrity, inclusivity, survivor-centered care, and community-led action. We believe that lasting change starts with empowered individuals and safe spaces.",
   },
-];
-
-const team = [
-  { name: "Amina Wanjiru", role: "Executive Director", initials: "AW" },
-  { name: "David Ochieng", role: "Programs Manager", initials: "DO" },
-  { name: "Grace Muthoni", role: "Community Lead", initials: "GM" },
-  { name: "James Kiprop", role: "Volunteer Coordinator", initials: "JK" },
 ];
 
 export default function AboutPage() {
@@ -97,29 +91,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <SectionTitle
-            title="Meet the Team"
-            subtitle="The dedicated individuals behind our mission."
-          />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {team.map((t) => (
-              <div
-                key={t.name}
-                className="rounded-2xl border border-border bg-white p-6 text-center shadow-sm"
-              >
-                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-sage text-xl font-bold text-primary">
-                  {t.initials}
-                </div>
-                <h3 className="font-bold text-charcoal">{t.name}</h3>
-                <p className="text-sm text-secondary">{t.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Leadership />
 
       <CTABanner
         title="Join Our Mission"

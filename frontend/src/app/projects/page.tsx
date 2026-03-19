@@ -1,5 +1,6 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ProjectCard from "@/components/ui/ProjectCard";
@@ -16,11 +17,18 @@ const statusOptions = [
 ];
 
 export default function ProjectsPage() {
+  const searchParams = useSearchParams();
+  const categoryFromUrl = searchParams.get("category") ?? "";
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("");
 
-  const { data, isLoading } = useProjects({ page, search, status });
+  const { data, isLoading } = useProjects({
+    page,
+    search,
+    status,
+    category: categoryFromUrl || undefined,
+  });
 
   return (
     <>

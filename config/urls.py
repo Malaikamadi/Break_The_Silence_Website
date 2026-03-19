@@ -21,6 +21,7 @@ api_v1 = [
     path("gallery/", include("gallery.urls")),
     path("volunteers/", include("volunteers.urls")),
     path("donations/", include("donations.urls")),
+    path("team/", include("team.urls")),
 ]
 
 urlpatterns = [

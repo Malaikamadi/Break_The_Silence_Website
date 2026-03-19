@@ -1,5 +1,5 @@
 import api from "@/lib/api";
-import type { PaginatedResponse, Project } from "@/types";
+import type { PaginatedResponse, Project, ProjectCategory } from "@/types";
 
 interface ProjectParams {
   page?: number;
@@ -7,6 +7,12 @@ interface ProjectParams {
   status?: string;
   ordering?: string;
   is_featured?: boolean;
+  category?: string;
+}
+
+export async function fetchProjectCategories(): Promise<ProjectCategory[]> {
+  const { data } = await api.get<ProjectCategory[]>("/projects/categories/");
+  return data;
 }
 
 export async function fetchProjects(params: ProjectParams = {}) {

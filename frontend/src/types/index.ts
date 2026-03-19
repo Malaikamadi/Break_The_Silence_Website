@@ -30,6 +30,13 @@ export interface User {
 
 export type ProjectStatus = "planned" | "ongoing" | "completed" | "suspended";
 
+export interface ProjectCategory {
+  id: number;
+  slug: string;
+  label: string;
+  order: number;
+}
+
 export interface Project {
   id: number;
   title: string;
@@ -37,6 +44,7 @@ export interface Project {
   description: string;
   location: string;
   is_featured?: boolean;
+  category: ProjectCategory | null;
   start_date: string;
   end_date: string | null;
   status: ProjectStatus;
@@ -83,6 +91,22 @@ export interface Post extends PostSummary {
   status: "draft" | "published";
   created_at: string;
   updated_at: string;
+}
+
+/* ---- Team / Leadership -------------------------------------------- */
+
+export interface TeamMember {
+  id: number;
+  name: string;
+  position: string;
+  credentials: string;
+  bio: string;
+  image: string | null;
+  is_featured: boolean;
+  order: number;
+  linkedin_url: string;
+  twitter_url: string;
+  email: string;
 }
 
 /* ---- Gallery ----------------------------------------------------- */
