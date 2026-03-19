@@ -95,12 +95,21 @@ export interface Post extends PostSummary {
 
 /* ---- Team / Leadership -------------------------------------------- */
 
+export interface TeamMemberStat {
+  value: string;
+  label: string;
+}
+
 export interface TeamMember {
   id: number;
   name: string;
   position: string;
   credentials: string;
   bio: string;
+  education: string;
+  experience: string;
+  focus_areas: string;
+  stats: TeamMemberStat[];
   image: string | null;
   is_featured: boolean;
   order: number;

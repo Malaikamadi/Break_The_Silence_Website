@@ -15,6 +15,14 @@ class TeamMember(models.Model):
         blank=True,
         help_text="Short biography for the team member.",
     )
+    education = models.CharField(max_length=500, blank=True)
+    experience = models.TextField(blank=True)
+    focus_areas = models.CharField(max_length=500, blank=True)
+    stats = models.JSONField(
+        default=list,
+        blank=True,
+        help_text="List of {value, label} for featured leader, e.g. [{'value': '15+', 'label': 'Years Experience'}]",
+    )
     image = models.ImageField(
         upload_to="team/%Y/%m/",
         blank=True,

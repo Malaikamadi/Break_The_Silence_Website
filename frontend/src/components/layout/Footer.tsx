@@ -41,21 +41,21 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-charcoal text-white">
+    <footer className="border-t border-border bg-primary-muted/95 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Logo */}
           <div>
             <Link href="/" className="inline-block">
-              <h2 className="text-xl font-extrabold tracking-tight">
-                Break<span className="text-primary-light">The</span>Silence
+              <h2 className="text-xl font-extrabold tracking-tight text-primary">
+                Break<span className="text-charcoal">The</span>Silence
               </h2>
             </Link>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-white">
+            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-charcoal">
               Quick Links
             </h3>
             <ul className="space-y-2">
@@ -63,7 +63,7 @@ export default function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="text-sm text-stone-300 transition-colors hover:text-white"
+                    className="text-sm text-secondary transition-colors hover:text-primary"
                   >
                     {l.label}
                   </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-white">
+            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-charcoal">
               Resources
             </h3>
             <ul className="space-y-2">
@@ -82,7 +82,7 @@ export default function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="text-sm text-stone-300 transition-colors hover:text-white"
+                    className="text-sm text-secondary transition-colors hover:text-primary"
                   >
                     {l.label}
                   </Link>
@@ -93,7 +93,7 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-white">
+            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-charcoal">
               Join Our Mailing List
             </h3>
             <form onSubmit={handleSubscribe} className="flex gap-2">
@@ -102,12 +102,12 @@ export default function Footer() {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 rounded-lg border border-stone-600 bg-stone-800/50 px-4 py-2.5 text-sm text-white placeholder-stone-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                className="flex-1 rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-charcoal placeholder-stone-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                 aria-label="Email for newsletter"
               />
               <button
                 type="submit"
-                className="shrink-0 rounded-lg bg-primary-light px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary"
+                className="shrink-0 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-dark"
               >
                 Subscribe
               </button>
@@ -117,13 +117,13 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-stone-700">
+      <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-5 sm:flex-row lg:px-8">
-          <p className="text-xs text-stone-400">
+          <p className="text-xs text-secondary">
             © {new Date().getFullYear()} Break the Silence. All rights reserved.
           </p>
           <div className="flex items-center gap-3">
-            <span className="text-xs text-stone-400">Follow us</span>
+            <span className="text-xs text-secondary">Follow us</span>
             <div className="flex gap-2">
               {socials.map((s) => (
                 <a
@@ -132,7 +132,7 @@ export default function Footer() {
                   aria-label={s.label}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-600 text-stone-400 transition-colors hover:border-primary-light hover:text-primary-light"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-secondary transition-colors hover:border-primary hover:text-primary"
                 >
                   <s.icon className="text-sm" />
                 </a>

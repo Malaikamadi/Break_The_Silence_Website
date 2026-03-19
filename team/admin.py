@@ -8,3 +8,8 @@ class TeamMemberAdmin(admin.ModelAdmin):
     list_filter = ["is_featured"]
     search_fields = ["name", "position", "bio"]
     ordering = ["order", "name"]
+    fieldsets = (
+        (None, {"fields": ("name", "position", "credentials", "bio", "image", "is_featured", "order")}),
+        ("Extended Profile (for modal)", {"fields": ("education", "experience", "focus_areas", "stats")}),
+        ("Social Links", {"fields": ("linkedin_url", "twitter_url", "email")}),
+    )

@@ -9,7 +9,7 @@ import Link from "next/link";
 
 export default function FeaturedProjects() {
   const { data, isLoading } = useProjects({ page: 1 });
-  const projects = data?.results.slice(0, 3) ?? [];
+  const projects = Array.isArray(data?.results) ? data.results.slice(0, 3) : [];
 
   return (
     <section className="py-20">

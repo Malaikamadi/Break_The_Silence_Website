@@ -32,7 +32,7 @@ export default function Hero() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
-  const items = projects ?? [];
+  const items = Array.isArray(projects) ? projects : [];
   const hasSlides = items.length > 0;
   const current = hasSlides ? items[index] : null;
 

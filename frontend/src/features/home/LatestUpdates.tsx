@@ -96,7 +96,7 @@ function SidebarItem({ project }: { project: Project }) {
 export default function LatestUpdates() {
   const [activeFilter, setActiveFilter] = useState("all");
   const { data: categoriesData } = useProjectCategories();
-  const categories = categoriesData ?? [];
+  const categories = Array.isArray(categoriesData) ? categoriesData : [];
   const filters = [
     { id: "all", label: "All" },
     ...categories.map((c) => ({ id: c.slug, label: c.label })),
@@ -105,7 +105,7 @@ export default function LatestUpdates() {
     page: 1,
     category: activeFilter === "all" ? undefined : activeFilter,
   });
-  const projects = data?.results ?? [];
+  const projects = Array.isArray(data?.results) ? data.results : [];
   const featured = projects[0];
   const sidebarProjects = projects.slice(1, 4);
 

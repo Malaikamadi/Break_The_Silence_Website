@@ -11,8 +11,12 @@ interface ProjectParams {
 }
 
 export async function fetchProjectCategories(): Promise<ProjectCategory[]> {
-  const { data } = await api.get<ProjectCategory[]>("/projects/categories/");
-  return data;
+  try {
+    const { data } = await api.get<ProjectCategory[]>("/projects/categories/");
+    return Array.isArray(data) ? data : [];
+  } catch {
+    return [];
+  }
 }
 
 export async function fetchProjects(params: ProjectParams = {}) {
